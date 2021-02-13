@@ -1,0 +1,290 @@
+// testworkflow specific styles
+@import "variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+
+  background: #fff;
+  font-size: 14px;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  p {
+    margin: 0;
+  }
+}
+
+main {
+  padding-top: 50px;
+  display: flex;
+  flex-flow: row;
+  flex-direction: row;
+  background-color: $color--secondary;
+  min-height: 100vh;
+  max-height: 100vh;
+  font-size: 18px;
+  color: white;
+}
+
+.column {
+  //padding: 15px;
+  width: 100%;
+  &.googleSheetsTable {
+    padding-top: 15px;
+  }
+  &.responseLogs {
+    max-width: 400px;
+    a {
+      color: #fff;
+    } 
+  }
+  //max-width: 33.3333%;
+  &.chatbotDummy {
+    max-width: 420px;
+  }
+  max-height: 100vh;
+  overflow-y: auto;
+  &:not(:last-of-type) {
+    padding: 0 15px;
+    border-right: 1px solid $color--primary;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sheetLoader {
+  img {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    animation: spin 2s linear infinite;
+  }
+  margin: 2rem 0;
+  text-align: center;
+  background: $color--tertiary;
+  padding: 3rem;
+}
+
+.chatbot {
+  position: relative;
+  max-height: 100vh;
+  background: lighten($color--secondary, 20);
+
+  display: flex;
+  height: 100%;
+  flex-flow: column;
+
+  justify-content: space-between;
+
+  &__messages {
+    padding: 1rem;
+    max-height: 90%;
+    overflow-y: auto;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      display: flex;
+      flex-flow: column;
+    }
+  }
+
+  &__message {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 16px;
+    margin: 8px 0;
+
+    span {
+      position: relative;
+      padding: 10px 20px;
+      margin-left: 20px;
+      border-radius: 3px;
+      background: $color--primary;
+      max-width: 100%;
+      overflow: hidden;
+      &:after {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 7px;
+        bottom: 15px;
+        background: $color--primary;
+        transform: rotate(45deg);
+      }
+    }
+
+    &--customer {
+      margin-left: 0;
+      margin-right: 20px;
+      justify-content: flex-end;
+      span {
+        background: $color--tertiary;
+        &:after {
+          background: $color--tertiary;
+          right: 7px;
+          left: unset;
+        }
+      }
+    }
+  }
+
+  &__input {
+    position: relative;
+    input {
+      width: 100%;
+      padding: 20px 10px;
+      outline: none;
+      border: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 30px;
+
+      outline: 0;
+      border: 0;
+      background: $color--primary;
+      color: #fff;
+
+      height: 100%;
+
+      font-size: 20px;
+
+      &:hover {
+        background: darken($color--primary, 10);
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  td {
+    border-bottom: 1px solid #fff;
+    max-width: 150px;
+    white-space: pre-wrap;
+    overflow: auto;
+  }
+}
+
+.intentAusloeser {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    background: lighten($color--secondary, 10);
+    padding: 15px;
+    margin: 1rem 0;
+    line-height: 2;
+  }
+}
+
+.color {
+  &--primary {
+    background: $color--primary;
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 1.2;
+    a {
+      color: #fff;
+    }
+  }
+  &--secondary {
+    background: $color--tertiary;
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 1.2;
+  }
+}
+
+table {
+  border-spacing: 0;
+  display: block;
+  overflow-x: auto;
+  text-align: left;
+  width: 100%;
+
+  tbody {
+    tr:nth-of-type(even) {
+      background: lighten($color--secondary, 5);
+    }
+  }
+}
+
+td,
+th {
+  border-bottom: 0.1rem solid #e1e1e1;
+  padding: 0.25rem 0.5rem;
+  //max-width: 640px;
+}
+
+td:first-child,
+th:first-child {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+td:last-child,
+th:last-child {
+  padding-right: 0;
+}
+
+@media (min-width: 40rem) {
+  table {
+    display: table;
+    overflow-x: initial;
+  }
+}
+
+pre {
+  margin: 0;
+}
+
+/**
+Table sizes
+*/
+
+.idCol {
+  width: 45px;
+}
+.intentCol {
+  width: 300px;
+}
+.questionCol {
+  max-width: 400px;
+}
+
+.answerCol {
+  max-width: 600px;
+}

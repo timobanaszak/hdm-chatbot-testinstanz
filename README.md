@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting started
 
-1. Run `yarn install` in the root of the repo
+1. Run `yarn install`
 2. Create the  `/src/config/config.json` file
 3. Paste the following content into the config.json file
 ```
@@ -14,11 +14,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     "googleSheetURL": "" 
 }
 ```
-4. Fill the corresponding information in `config.json`
-5. `dfEditIntentURL`: Simply log into dialogflow and edit an existing intent. The URL will look something like the following: `https://dialogflow.cloud.google.com/#/agent/{AGENTID}/editIntent/`. Remove the id of the intent at the end of the URL
-6. `dfTrainingURL`: Simply log into dialogflow and open the training. Copy and paste the URL.
-7. `dfWebdemoUrl`: Open the dialogflow web demo (Login Dialogflow > Integrations > Webdemo), send a request and check for the URL in the Network Tab of your browser. Copy the URL and paste it in here.
-8. Create a public URL for your Google Sheet, as described here: https://github.com/jsoma/tabletop#1-publishing-your-google-sheet
+4. `dfEditIntentURL`: Simply log into dialogflow and edit an existing intent. The URL will look something like the following: `https://dialogflow.cloud.google.com/#/agent/{AGENTID}/editIntent/`. Remove the id of the intent at the end of the URL
+5. `dfTrainingURL`: Simply log into dialogflow and open the training. Copy and paste the URL.
+6. `dfWebdemoUrl`: Open the dialogflow web demo (Login Dialogflow > Integrations > Webdemo), send a request and check for the URL in the Network Tab of your browser. Copy the URL and paste it in here. *I guess this should be replaced with an actual cloud console url?*
+7. Create a public URL for your Google Sheet, as described here: https://github.com/jsoma/tabletop#1-publishing-your-google-sheet
+8. Fill the corresponding information in `config.json`
+9. Run `yarn start` for development / testing
+10. Run `yarn build` and deploy :) 
 ## Development
 
 ### `yarn install`

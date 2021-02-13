@@ -1,5 +1,7 @@
-# Getting Started with Create React App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# hdm-chatbot-testinstanz
+A quick and dirty react app to test training phrases and intents with Google Dialogflow.
+
+*This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
 
 ## Getting started
 

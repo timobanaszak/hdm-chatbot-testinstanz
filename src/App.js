@@ -5,11 +5,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <p>HdM Chatbot Testinstanz</p> 
-        <p>Erstellt von: Bettina Artmann, Timo Banaszak, Markus Besser und Linus Dietrich</p>
+        <p>HdM Chatbot Testinstanz</p>
       </header>
       <main>
-        <TestingUi/>
+        <TestingUi />
       </main>
     </div>
   );
